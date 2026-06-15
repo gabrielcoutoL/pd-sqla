@@ -1,0 +1,61 @@
+produto_id,nome_produto,categoria,preco,custo,ativo
+1,Caixa de Som Pro,Eletrônicos,702.38,315.9,True
+2,Caixa de Som Smart,Eletrônicos,45.08,23.35,True
+3,Teclado Básico,Eletrônicos,557.23,311.95,True
+4,Fone Eco,Eletrônicos,653.59,400.56,True
+5,Caixa de Som Básico,Eletrônicos,716.14,335.86,True
+6,Mouse Premium,Eletrônicos,521.39,360.59,True
+7,Caixa de Som Básico,Eletrônicos,214.74,94.88,True
+8,Mouse Premium,Eletrônicos,196.59,108.31,True
+9,Fone Plus,Eletrônicos,29.47,16.71,True
+10,Teclado Smart,Eletrônicos,649.81,329.18,True
+11,Cortina Premium,Casa,150.99,93.95,True
+12,Luminária Premium,Casa,126.6,65.58,True
+13,Tapete Básico,Casa,22.11,10.83,True
+14,Cortina Smart,Casa,280.59,135.14,True
+15,Cortina Plus,Casa,161.59,90.31,True
+16,Luminária Clássico,Casa,468.73,200.58,True
+17,Toalha Pro,Casa,156.48,98.5,True
+18,Toalha Smart,Casa,630.55,291.24,True
+19,Panela Clássico,Casa,407.68,167.1,True
+20,Panela Smart,Casa,584.73,380.78,False
+21,Corda Básico,Esporte,708.02,452.61,True
+22,Corda Smart,Esporte,564.77,340.13,True
+23,Tênis Básico,Esporte,529.17,357.58,True
+24,Mochila Clássico,Esporte,266.3,112.31,True
+25,Bola Premium,Esporte,367.31,221.34,True
+26,Mochila Clássico,Esporte,792.98,355.68,True
+27,Mochila Básico,Esporte,712.19,295.32,True
+28,Garrafa Premium,Esporte,296.69,176.41,True
+29,Tênis Pro,Esporte,222.6,98.07,True
+30,Corda Eco,Esporte,100.59,59.48,True
+31,Romance Pro,Livros,188.97,114.81,True
+32,Manual Plus,Livros,440.55,299.79,True
+33,Biografia Eco,Livros,671.97,283.94,True
+34,Atlas Básico,Livros,790.99,517.29,True
+35,Biografia Plus,Livros,508.88,257.49,True
+36,Manual Básico,Livros,620.91,434.31,True
+37,Romance Pro,Livros,67.82,39.25,True
+38,Guia Smart,Livros,210.92,105.17,True
+39,Atlas Smart,Livros,163.37,73.47,False
+40,Manual Smart,Livros,701.13,426.32,False
+41,Calça Premium,Moda,42.07,23.88,True
+42,Boné Clássico,Moda,485.45,257.47,True
+43,Boné Eco,Moda,244.49,147.61,False
+44,Calça Básico,Moda,765.57,531.48,True
+45,Meia Clássico,Moda,382.87,178.42,True
+46,Jaqueta Clássico,Moda,594.36,277.32,True
+47,Jaqueta Eco,Moda,380.98,246.85,True
+48,Boné Premium,Moda,521.67,310.37,True
+49,Jaqueta Smart,Moda,309.93,128.22,True
+50,Camiseta Básico,Moda,357.74,190.13,True
+51,Creme Plus,Beleza,183.35,105.67,True
+52,Perfume Básico,Beleza,70.08,44.17,True
+53,Shampoo Pro,Beleza,316.58,167.6,True
+54,Sabonete Básico,Beleza,270.25,169.56,True
+55,Sabonete Clássico,Beleza,535.48,283.54,True
+56,Perfume Pro,Beleza,377.16,197.76,True
+57,Perfume Eco,Beleza,267.82,115.5,True
+58,Máscara Premium,Beleza,116.61,61.0,True
+59,Perfume Smart,Beleza,745.95,306.49,True
+60,Perfume Smart,Beleza,377.03,153.1,True
