@@ -15,7 +15,7 @@ PROCESSED = BASE_DIR.parent / "data" / "processed"
 
 
 class Transformer:
-    def __init__(self, staging_path: Path):
+    def __init__(self):
         pass
 
     # --------------------
@@ -41,13 +41,21 @@ class Transformer:
 
     def remover_nulos(self, df: pd.DataFrame, campos: list[str]) -> pd.DataFrame:
 
-        return df.dropna(subset=campos).reset_index(drop=True)
+        df_new = df.dropna(subset=campos).reset_index(drop=True)
+
+        logger.info(f"{len(df) - len(df_new)} nulos dropados")
+
+        return df_new
 
     def drop_duplicates(
         self, df: pd.DataFrame, campos: Optional[list[str]]
     ) -> pd.DataFrame:
 
-        return df.drop_duplicates(subset=campos).reset_index(drop=True)
+        df_new = df.drop_duplicates(subset=campos).reset_index(drop=True)
+
+        logger.info(f"{len(df) - len(df_new)} duplicatas dropadas")
+
+        return df_new
 
     def to_title_case(self, df: pd.DataFrame, campos: list[str]) -> pd.DataFrame:
 
@@ -147,8 +155,8 @@ class Transformer:
 
         df_pedidos = self.to_title_case(df=df_pedidos, campos=["status", "canal"])
 
+        df_pedidos["status"] = df_pedidos["status"].astype("category")
+
+        df_pedidos["canal"] = df_pedidos["canal"].astype("category")
+
         return df_pedidos
-
-
-if __name__ == "__main__":
-    trans = Transformer()
