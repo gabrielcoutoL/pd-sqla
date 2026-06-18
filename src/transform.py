@@ -48,7 +48,7 @@ class Transformer:
         return df_new
 
     def drop_duplicates(
-        self, df: pd.DataFrame, campos: Optional[list[str]]
+        self, df: pd.DataFrame, campos: Optional[list[str]] = None
     ) -> pd.DataFrame:
 
         df_new = df.drop_duplicates(subset=campos).reset_index(drop=True)

@@ -1,0 +1,39 @@
+services:
+
+  banco_destino:
+    image: postgres:16
+    container_name: dwh_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - dados_banco:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      retries: 5
+      timeout: 5s
+
+  motor_extracao:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: pipeline_ecom
+    depends_on:
+      banco_destino:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      DB_HOST: banco_destino
+      DATA_PATH: /app/data/raw
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+
+volumes:
+  dados_banco:
