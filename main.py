@@ -152,10 +152,13 @@ def orquestrador_principal():
     # LOAD
     # --------------------
 
+    ldr.create_tables()
+    ldr.truncate_all()
+
     ldr.load_to_postgres(df=dim_clientes, table_name="dim_clientes")
     ldr.load_to_postgres(df=dim_produtos, table_name="dim_produtos")
-    ldr.load_to_postgres(df=ft_itens_pedido, table_name="ft_itens_pedido")
     ldr.load_to_postgres(df=ft_pedidos, table_name="ft_pedidos")
+    ldr.load_to_postgres(df=ft_itens_pedido, table_name="ft_itens_pedido")
     ldr.load_to_postgres(df=df_analytical, table_name="analytic_table")
 
 
