@@ -5,6 +5,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from sqlalchemy import URL, create_engine
 
+from schemas.schemas import BronzeClientes, SilverClientes
 from src.ingest import Ingester
 from src.load import Loader
 from src.transform import Transformer
@@ -56,7 +57,7 @@ def orquestrador_principal():
             "limite_credito",
         ],
         data_types={
-            "cliente_id": "int",
+            "cliente_id": "Int64",
             "nome": "str",
             "email": "str",
             "cidade": "str",
@@ -67,6 +68,7 @@ def orquestrador_principal():
         date_columns=["data_cadastro"],
     )
     trans.diagnostico(df_clientes)
+    df_clientes = BronzeClientes.validate(df_clientes, lazy=True)
 
     df_itens_pedido = ing.ler_csv(
         nome="itens_pedido",
@@ -127,6 +129,7 @@ def orquestrador_principal():
     # --------------------
 
     dim_clientes = trans.transform_clientes(df_clientes)
+    dim_clientes = SilverClientes.validate(dim_clientes, lazy=True)
 
     dim_produtos = trans.transform_produtos(df_produtos)
 
